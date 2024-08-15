@@ -1,29 +1,32 @@
 fun main() {
 
-    val inputEnergia = readln().toInt()
-    val fatorEmissaoEletricidade = 0.475
+
+
     val consumoEletricidade = 100
-    val fatorEmissaoGasNatural = 2.0
     val consumoGasNatural = 50
+
+
+    println("Qual o seu tipo de Energia? ")
+    println("1 - ${TiposEnergia.eletricidade} | 2 - ${TiposEnergia.gasNatural}")
+    val inputEnergia = readln().toInt()
+
+    println("Quanto é o seu consumo?")
     val inputConsumo = readln().toDouble()
 
-
-    println("Qual o seu tipo de Energia? $inputEnergia")
-    println("1 - ${TiposEnergia.eletricidade} | 2 - ${TiposEnergia.gasNatural}")
-
-    println("Quanto é o seu consumo? $inputConsumo")
+    val fatorEmissaoEletricidade = 0.475
+    val fatorEmissaoGasNatural = 2.0
+    var totalPegadasCarborno = 0.0
 
     if (inputEnergia == 1) {
-        val totalPegadasCarborno = consumoEletricidade * fatorEmissaoEletricidade
-        println("A quantidade de pegadas de CO² é igual a: $totalPegadasCarborno KG Co²")
+        totalPegadasCarborno = consumoEletricidade * fatorEmissaoEletricidade
 
+    } else if(inputEnergia == 2) {
+         totalPegadasCarborno = consumoGasNatural * fatorEmissaoGasNatural
+
+    } else {
+        println("Tipo de Energia inválido.")
     }
-
-    if(inputEnergia == 2) {
-        val totalPegadasCarborno = consumoGasNatural * fatorEmissaoGasNatural
-        println("A quantidade de pegadas de CO² é igual a: $totalPegadasCarborno KG Co²")
-    }
-
+    println("A quantidade de pegadas de CO² é igual a: $totalPegadasCarborno KG Co²")
 
 
 
