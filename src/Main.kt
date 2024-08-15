@@ -1,6 +1,5 @@
 fun main() {
-    var energiaEletrica = 0;
-    var gasNatural = 0;
+
     val inputEnergia = readln().toInt()
     val fatorEmissaoEletricidade = 0.475
     val consumoEletricidade = 100
